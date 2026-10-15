@@ -84,7 +84,7 @@ export default function BookingFlowPage() {
 
     const fetchLiveSalon = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/salons/${urlSalonId}`);
+        const res = await fetch(`https://groomax-backend.onrender.com/api/salons/${urlSalonId}`);
         const result = await res.json();
         if (cancelled) return;
 

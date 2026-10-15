@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const API = 'http://localhost:5000/api/owner';
+const API = 'https://groomax-backend.onrender.com/api/owner';
 const waUrl = (phone, text) => {
   const d = String(phone || '').replace(/\D/g, '');
   if (!d) return null;
@@ -74,7 +74,7 @@ export default function OwnerPanel() {
         }
         const token = user?.token || localStorage.getItem('token');
 
-        const res = await fetch('http://localhost:5000/api/owner/salon/me', {
+        const res = await fetch('https://groomax-backend.onrender.com/api/owner/salon/me', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -153,7 +153,7 @@ export default function OwnerPanel() {
       const user = JSON.parse(localStorage.getItem('groomax_user'));
       const token = user?.token || localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:5000/api/owner/services', {
+      const response = await fetch('https://groomax-backend.onrender.com/api/owner/services', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -195,7 +195,7 @@ export default function OwnerPanel() {
         const user = JSON.parse(localStorage.getItem('groomax_user'));
         const token = user?.token || localStorage.getItem('token');
 
-        const response = await fetch(`http://localhost:5000/api/owner/services/${id}`, {
+        const response = await fetch(`https://groomax-backend.onrender.com/api/owner/services/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -222,7 +222,7 @@ export default function OwnerPanel() {
       const user = JSON.parse(localStorage.getItem('groomax_user'));
       const token = user?.token || localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:5000/api/owner/services/${id}/toggle`, {
+      const response = await fetch(`https://groomax-backend.onrender.com/api/owner/services/${id}/toggle`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -245,7 +245,7 @@ export default function OwnerPanel() {
       const user = JSON.parse(localStorage.getItem('groomax_user'));
       const token = user?.token || localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:5000/api/owner/salon', {
+      const response = await fetch('https://groomax-backend.onrender.com/api/owner/salon', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -416,7 +416,7 @@ export default function OwnerPanel() {
       const user = JSON.parse(localStorage.getItem('groomax_user'));
       const token = user?.token || localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:5000/api/owner/bookings/${id}/status`, {
+      const response = await fetch(`https://groomax-backend.onrender.com/api/owner/bookings/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

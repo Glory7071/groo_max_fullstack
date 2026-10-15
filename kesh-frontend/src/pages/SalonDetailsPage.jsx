@@ -55,7 +55,7 @@ export default function SalonDetailsPage() {
         // Agar id 'salon-1' hai toh numeric id (jaise 1) nikal lenge
         // salonNumericId upar URL se strict parse ho chuka hai
         
-        const response = await fetch(`http://localhost:5000/api/salons/${salonNumericId}`);
+        const response = await fetch(`https://groomax-backend.onrender.com/api/salons/${salonNumericId}`);
         const result = await response.json();
         if (cancelled) return;
         
