@@ -28,7 +28,7 @@ export default function CustomerPortal() {
   useEffect(() => {
     const fetchApprovedSalons = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/salons');
+        const response = await fetch('https://groomax-backend.onrender.com/api/salons');
         const data = await response.json();
         
         if (data.success && data.salons) {
